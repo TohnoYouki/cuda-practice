@@ -1,3 +1,4 @@
+#pragma once
 #include <ctime>
 #include <iostream>
 #include "error.cuh"
@@ -9,7 +10,6 @@ public:
 	CpuTimer() {
 		start = clock();
 	}
-
 	~CpuTimer() {
 		stop = clock();
 		double time = 0.0;
@@ -27,7 +27,6 @@ public:
 		cudaEventCreate(&stop);
 		cudaEventRecord(start, 0);
 	}
-
 	~CudaTimer() {
 		cudaEventRecord(stop, 0);
 		cudaEventSynchronize(stop);
