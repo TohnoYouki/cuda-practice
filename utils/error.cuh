@@ -6,7 +6,7 @@
 #define CUDA_CHECK(status)                                       \
 	do {                                                         \
 		cudaError_t status_ = status;                            \
-		if (cudaSuccess != status_) {         \
+		if (cudaSuccess != status_) {                            \
 			auto msg = cudaGetErrorString(status_);              \
 			std::printf("failed with status %d: %s at %s:%d\n",  \
                          status_, msg, __FILE__, __LINE__);      \
