@@ -5,7 +5,7 @@
 
 #define CUDA_CHECK(status)                                       \
     do {                                                         \
-        cudaError_t status = status;                             \
+        cudaError_t status_ = status;                            \
         if (cudaSuccess != status_) {                            \
             auto msg = cudaGetErrorString(status_);              \
             std::printf("failed with status %d: %s at %s:%d\n",  \
@@ -24,3 +24,4 @@
             throw std::logic_error("cuda Logic Error!");         \
         }                                                        \
     } while (0)
+    
